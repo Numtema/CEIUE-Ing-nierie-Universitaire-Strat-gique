@@ -1,0 +1,6 @@
+{
+  "name": "CEIUE — Ingénierie Universitaire Stratégique",
+  "description": "Centre d'Expertise et d'Ingénierie Universitaire pour les États africains. Transformation stratégique de l'enseignement supérieur, authentification des diplômes et souveraineté des compétences.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

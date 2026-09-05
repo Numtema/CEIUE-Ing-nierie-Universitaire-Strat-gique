@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-950: #07111f;
+  --color-ink-900: #0b1b2e;
+  --color-ink-800: #102a43;
+  --color-ivory-50: #fbf8f1;
+  --color-ivory-100: #f4efe4;
+  --color-gold-500: #c7a45d;
+  --color-gold-400: #d6b86f;
+  --color-gold-300: #e1c783;
+  --color-signal-500: #b8d94e;
+  --color-electric-400: #5cc8e8;
+  --color-text-dark: #142131;
+  --color-text-muted: #607080;
+  --color-outline-light: #d9d4c9;
+  --color-error: #b42318;
+  --color-success: #327a55;
+
+  --font-serif: var(--font-serif), "DM Serif Display", Georgia, serif;
+  --font-sans: var(--font-sans), "Manrope", sans-serif;
+  --font-mono: var(--font-mono), "IBM Plex Mono", monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color: var(--color-text-dark);
+    background-color: var(--color-ink-950);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: #c7a45d;
+    color: #07111f;
+  }
+}
+
+/* Custom editorial aesthetics & Framer-quality micro-details */
+.font-display {
+  font-family: var(--font-serif);
+}
+
+.font-body {
+  font-family: var(--font-sans);
+}
+
+.font-code {
+  font-family: var(--font-mono);
+}
+
+/* Grain texture for cinematic depth */
+.bg-grain {
+  background-image: radial-gradient(rgba(199, 164, 93, 0.08) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+
+/* Gold shimmer underline animation */
+.gold-underline {
+  position: relative;
+  text-decoration: none;
+}
+.gold-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: linear-gradient(90deg, #C7A45D, #E1C783);
+  transform-origin: bottom right;
+  transition: transform 0.28s cubic-bezier(0.2, 0, 0, 1);
+}
+.gold-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Custom focus ring */
+:focus-visible {
+  outline: 3px solid #C7A45D;
+  outline-offset: 3px;
+}
+
+/* Pulse animation for active network nodes */
+@keyframes subtle-pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.15);
+  }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 4s ease-in-out infinite;
+}
