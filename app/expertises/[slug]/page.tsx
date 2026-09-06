@@ -170,7 +170,7 @@ export default async function ExpertiseDetailPage({ params }: Props) {
 
                   <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#07111F]/80 backdrop-blur-md border border-[#102A43]">
                     <p className="text-xs font-mono text-[#C7A45D] mb-1 uppercase tracking-wider">Cible d'impact régalien</p>
-                    <p className="text-xs text-slate-200 line-clamp-2">{expertise.publics.join(' • ')}</p>
+                    <p className="text-xs text-slate-200 line-clamp-2">{expertise.targetInstitutions.join(' • ')}</p>
                   </div>
                 </div>
               </div>
@@ -211,7 +211,7 @@ export default async function ExpertiseDetailPage({ params }: Props) {
           </div>
         </section>
 
-        {/* Deliverables & Publics */}
+        {/* Deliverables & Target Institutions */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
             {/* Left: Deliverables */}
@@ -247,7 +247,7 @@ export default async function ExpertiseDetailPage({ params }: Props) {
               </div>
             </div>
 
-            {/* Right: Publics & Governance */}
+            {/* Right: Target Institutions & Governance */}
             <div className="lg:col-span-5 space-y-6">
               <div className="bg-[#0B1B2E] border border-[#102A43] p-7 rounded-2xl space-y-6">
                 <div>
@@ -255,15 +255,15 @@ export default async function ExpertiseDetailPage({ params }: Props) {
                     DESTINATAIRES HABILITÉS
                   </span>
                   <h3 className="font-serif text-2xl text-white">
-                    Acteurs concernés
+                    Acteurs & Instances concernés
                   </h3>
                 </div>
 
                 <ul className="space-y-2.5">
-                  {expertise.publics.map((pub, idx) => (
+                  {expertise.targetInstitutions.map((inst, idx) => (
                     <li key={idx} className="flex items-center gap-2.5 text-xs text-slate-200 font-mono">
                       <Users className="w-3.5 h-3.5 text-[#C7A45D]" />
-                      <span>{pub}</span>
+                      <span>{inst}</span>
                     </li>
                   ))}
                 </ul>

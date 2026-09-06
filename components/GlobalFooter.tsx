@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, ShieldCheck, Mail, Globe, MapPin } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Mail, Globe, MapPin, Landmark } from 'lucide-react';
 
 export default function GlobalFooter() {
   return (
@@ -43,22 +43,7 @@ export default function GlobalFooter() {
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-[#0B1B2E] border border-[#C7A45D]/40 flex items-center justify-center text-[#C7A45D]">
-                <svg
-                  className="w-5 h-5"
-                  viewBox="0 0 100 100"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <polygon
-                    points="50,6 92,28 92,72 50,94 8,72 8,28"
-                    stroke="#C7A45D"
-                    strokeWidth="4"
-                    fill="none"
-                  />
-                  <circle cx="50" cy="50" r="10" fill="#E1C783" />
-                  <line x1="50" y1="20" x2="50" y2="80" stroke="#C7A45D" strokeWidth="3" />
-                </svg>
+                <Landmark className="w-5 h-5 text-[#C7A45D]" />
               </div>
               <span className="font-serif text-2xl tracking-widest text-[#FBF8F1] uppercase font-bold">
                 CEIUE
@@ -146,11 +131,6 @@ export default function GlobalFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/publics" className="hover:text-white transition-colors">
-                  Institutions & Publics
-                </Link>
-              </li>
-              <li>
                 <Link href="/ressources" className="hover:text-white transition-colors">
                   Notes & Ressources
                 </Link>
@@ -165,8 +145,9 @@ export default function GlobalFooter() {
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link href="/contact" className="text-[#5CC8E8] hover:text-[#E1C783] font-semibold transition-colors">
-                  Présenter un besoin national →
+                <Link href="/contact" className="text-[#5CC8E8] hover:text-[#E1C783] font-semibold transition-colors inline-flex items-center gap-1.5 group">
+                  <span>Présenter un besoin national</span>
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </li>
               <li className="pt-2 text-xs text-slate-400">

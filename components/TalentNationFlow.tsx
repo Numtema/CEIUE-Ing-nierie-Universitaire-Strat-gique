@@ -56,18 +56,18 @@ export default function TalentNationFlow() {
   const current = TALENT_STAGES[activeStage];
 
   return (
-    <div className="w-full bg-[#07111F] border border-[#102A43] rounded-2xl p-6 sm:p-10 shadow-2xl">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[#102A43]">
+    <div className="w-full bg-white border border-[#E2E8F0] rounded-3xl p-6 sm:p-10 shadow-xl">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[#E2E8F0]">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#5CC8E8]/10 border border-[#5CC8E8]/30 text-[#5CC8E8] text-xs font-mono tracking-widest uppercase mb-2">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FAF5EB] border border-[#C7A45D]/40 text-[#9A7B38] text-xs font-mono tracking-widest uppercase mb-2 font-semibold">
             <Building2 className="w-3.5 h-3.5 text-[#C7A45D]" />
             TALENT NATION FLOW
           </div>
-          <h3 className="font-serif text-2xl sm:text-3xl text-white">
+          <h3 className="font-serif text-2xl sm:text-3xl text-[#0B1B2E] font-normal">
             Trajectoire de souveraineté des compétences
           </h3>
         </div>
-        <div className="font-mono text-xs text-slate-400 max-w-xs">
+        <div className="font-mono text-xs text-slate-600 max-w-xs">
           Passer d’une politique de départ passif à une dynamique active de formation et d’ancrage national.
         </div>
       </div>
@@ -81,22 +81,26 @@ export default function TalentNationFlow() {
             <button
               key={st.step}
               onClick={() => setActiveStage(idx)}
-              className={`flex-1 text-left p-4 rounded-xl border transition-all duration-200 cursor-pointer ${
+              className={`flex-1 text-left p-4 rounded-2xl border transition-all duration-200 cursor-pointer ${
                 isSelected
-                  ? 'bg-[#102A43] border-[#C7A45D] ring-1 ring-[#C7A45D]'
-                  : 'bg-[#0B1B2E]/70 border-[#102A43] hover:border-slate-700'
+                  ? 'bg-[#0B1B2E] border-[#0B1B2E] text-white shadow-lg ring-2 ring-[#C7A45D]/50'
+                  : 'bg-[#FAF8F5] border-[#E2E8F0] text-[#0B1B2E] hover:border-[#C7A45D]'
               }`}
             >
               <div className="flex items-center justify-between mb-2">
-                <span className={`font-mono text-xs font-bold ${isSelected ? 'text-[#C7A45D]' : 'text-slate-500'}`}>
+                <span
+                  className={`font-mono text-xs font-bold px-2 py-0.5 rounded ${
+                    isSelected ? 'bg-[#C7A45D] text-[#0B1B2E]' : 'bg-slate-200/60 text-slate-700'
+                  }`}
+                >
                   {st.step}
                 </span>
-                <Icon className={`w-4 h-4 ${isSelected ? 'text-[#E1C783]' : 'text-slate-500'}`} />
+                <Icon className={`w-4 h-4 ${isSelected ? 'text-[#E1C783]' : 'text-[#C7A45D]'}`} />
               </div>
-              <h4 className={`text-sm font-semibold mb-1 ${isSelected ? 'text-white' : 'text-slate-300'}`}>
+              <h4 className={`text-sm font-semibold mb-1 ${isSelected ? 'text-white' : 'text-[#0B1B2E]'}`}>
                 {st.title}
               </h4>
-              <span className="text-[11px] font-mono text-slate-400 block">
+              <span className={`text-[11px] font-mono block ${isSelected ? 'text-slate-300' : 'text-slate-500'}`}>
                 {st.tag}
               </span>
             </button>
@@ -105,47 +109,47 @@ export default function TalentNationFlow() {
       </div>
 
       {/* Highlight Box */}
-      <div className="mt-6 bg-[#0B1B2E] border border-[#C7A45D]/20 rounded-xl p-6 md:p-8">
+      <div className="mt-6 bg-[#FAF8F5] border border-[#E2E8F0] rounded-2xl p-6 md:p-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
           <div className="md:col-span-8">
             <div className="flex items-center gap-2 mb-2">
-              <span className="font-mono text-xs px-2.5 py-0.5 rounded bg-[#C7A45D]/10 text-[#C7A45D] border border-[#C7A45D]/30">
+              <span className="font-mono text-xs px-2.5 py-0.5 rounded bg-[#0B1B2E] text-white font-bold">
                 PHASE {current.step}
               </span>
-              <span className="font-mono text-xs text-[#5CC8E8]">
+              <span className="font-mono text-xs text-[#9A7B38] bg-[#FAF5EB] px-2.5 py-0.5 rounded border border-[#C7A45D]/30 font-semibold">
                 Pilotage : {current.actor}
               </span>
             </div>
-            <h4 className="text-xl md:text-2xl font-serif text-white mb-2">
+            <h4 className="text-xl md:text-2xl font-serif text-[#0B1B2E] mb-2 font-normal">
               {current.title}
             </h4>
-            <p className="text-slate-300 text-sm md:text-base leading-relaxed mb-4">
+            <p className="text-slate-700 text-sm md:text-base leading-relaxed mb-4 font-light">
               {current.goal}
             </p>
-            <div className="p-4 rounded-lg bg-[#07111F] border border-[#102A43]">
-              <span className="text-[11px] font-mono uppercase tracking-wider text-[#C7A45D] block mb-1">
-                Résultat pour la politique publique
+            <div className="p-4 rounded-xl bg-white border border-[#E2E8F0] shadow-sm">
+              <span className="text-[11px] font-mono uppercase tracking-wider text-[#9A7B38] font-bold block mb-1">
+                Résultat pour la politique publique :
               </span>
-              <p className="text-xs md:text-sm text-slate-200">
+              <p className="text-xs md:text-sm text-[#0B1B2E] font-medium leading-relaxed">
                 {current.publicImpact}
               </p>
             </div>
           </div>
 
-          <div className="md:col-span-4 bg-[#102A43]/50 p-5 rounded-xl border border-[#102A43] flex flex-col justify-between h-full">
+          <div className="md:col-span-4 bg-white p-6 rounded-2xl border border-[#C7A45D]/40 shadow-sm flex flex-col justify-between h-full space-y-4">
             <div>
-              <span className="text-xs font-mono text-[#E1C783] uppercase tracking-wider block mb-2">
+              <span className="text-xs font-mono text-[#9A7B38] uppercase tracking-wider font-bold block mb-2">
                 Principe fondamental
               </span>
-              <p className="text-xs text-slate-300 italic leading-relaxed">
+              <p className="text-xs text-slate-700 italic leading-relaxed bg-[#FAF8F5] p-3 rounded-xl border border-[#E2E8F0]">
                 « Les budgets d’études internationales ne doivent pas être une subvention à l’émigration définitive mais un contrat de souveraineté partagée. »
               </p>
             </div>
-            <div className="mt-4 pt-4 border-t border-slate-700/50 flex items-center justify-between text-xs font-mono">
-              <span className="text-slate-400">Étape {activeStage + 1} sur 5</span>
+            <div className="pt-4 border-t border-[#E2E8F0] flex items-center justify-between text-xs font-mono">
+              <span className="text-slate-500">Étape {activeStage + 1} sur 5</span>
               <button
                 onClick={() => setActiveStage((prev) => (prev + 1) % TALENT_STAGES.length)}
-                className="text-[#5CC8E8] hover:text-[#E1C783] font-semibold flex items-center gap-1 cursor-pointer"
+                className="text-[#9A7B38] hover:text-[#0B1B2E] font-bold flex items-center gap-1 cursor-pointer"
               >
                 Suivant <ChevronRight className="w-3.5 h-3.5" />
               </button>

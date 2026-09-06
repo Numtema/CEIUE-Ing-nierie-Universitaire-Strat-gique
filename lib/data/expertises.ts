@@ -8,7 +8,8 @@ export interface ExpertiseItem {
   problem: string;
   solution: string;
   deliverables: string[];
-  publics: string[];
+  targetInstitutions: string[];
+  publics?: string[];
   statsOrIndicators: { label: string; value: string }[];
   image: string;
   pathwaySteps?: { step: number; title: string; desc: string }[];
@@ -34,6 +35,11 @@ export const EXPERTISES: ExpertiseItem[] = [
       "Matrice des compétences critiques 2026-2035",
       "Guide méthodologique de restructuration académique",
       "Feuille de route ministérielle de transition"
+    ],
+    targetInstitutions: [
+      "Ministères de l'Enseignement supérieur",
+      "Conseils nationaux de l'éducation",
+      "Conférences des recteurs et présidents d'université"
     ],
     publics: [
       "Ministères de l'Enseignement supérieur",
@@ -70,6 +76,12 @@ export const EXPERTISES: ExpertiseItem[] = [
       "Protocole de vérification pour ambassades et universités étrangères",
       "Plateforme numérique d'authentification interministérielle",
       "Cadre juridique et réglementaire de certification"
+    ],
+    targetInstitutions: [
+      "Agences nationales d'assurance qualité",
+      "Ministères des Affaires étrangères et consulats",
+      "Directions des examens et concours universitaires",
+      "Employeurs publics et privés"
     ],
     publics: [
       "Agences nationales d'assurance qualité",
@@ -108,6 +120,11 @@ export const EXPERTISES: ExpertiseItem[] = [
       "Contrat d'engagement réciproque et suivi académique des boursiers",
       "Dispositif de suivi personnalisé à l'international"
     ],
+    targetInstitutions: [
+      "Agences nationales de bourses d'études",
+      "Ministères des Finances et du Plan",
+      "Grandes écoles et facultés partenaires"
+    ],
     publics: [
       "Agences nationales de bourses d'études",
       "Ministères des Finances et du Plan",
@@ -138,6 +155,12 @@ export const EXPERTISES: ExpertiseItem[] = [
       "Programme d'amorçage de carrière dans les administrations clés",
       "Mécanismes d'incitation à l'installation des enseignants-chercheurs",
       "Baromètre national du retour et de l'impact économique"
+    ],
+    targetInstitutions: [
+      "Ministères de la Fonction publique et du Travail",
+      "Hauts conseils de la diaspora",
+      "Pôles de recherche et universités d'accueil",
+      "Fédérations patronales et industrielles"
     ],
     publics: [
       "Ministères de la Fonction publique et du Travail",
@@ -171,6 +194,11 @@ export const EXPERTISES: ExpertiseItem[] = [
       "Protocole de recherche partagée et co-financements",
       "Évaluation annuelle de l'équilibre des flux"
     ],
+    targetInstitutions: [
+      "Directions des relations internationales universitaires",
+      "Ambassades et services de coopération culturelle",
+      "Instituts de recherche et laboratoires panafricains"
+    ],
     publics: [
       "Directions des relations internationales universitaires",
       "Ambassades et services de coopération culturelle",
@@ -187,7 +215,7 @@ export const EXPERTISES: ExpertiseItem[] = [
     category: 'cooperer',
     categoryLabel: 'Coopérer avec le monde',
     title: "Co-diplomations & Doubles diplômes souverains",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80",
     shortDescription:
       "Création de cursus hybrides permettant aux étudiants d'obtenir un diplôme national et un diplôme étranger réputé sans déracinement prolongé.",
     fullDescription:
@@ -201,6 +229,11 @@ export const EXPERTISES: ExpertiseItem[] = [
       "Règlement des examens et jurys mixtes",
       "Modèle économique pérenne de financement par étudiant",
       "Dossier d'homologation auprès des autorités de tutelle"
+    ],
+    targetInstitutions: [
+      "Facultés de médecine, écoles d'ingénieurs et instituts de gestion",
+      "Universités partenaires internationales",
+      "Ministères de tutelle"
     ],
     publics: [
       "Facultés de médecine, écoles d'ingénieurs et instituts de gestion",
@@ -233,6 +266,11 @@ export const EXPERTISES: ExpertiseItem[] = [
       "Évaluation par mises en situation réelles",
       "Certifications visées par les autorités académiques"
     ],
+    targetInstitutions: [
+      "Instituts de formation professionnelle d'excellence",
+      "Grandes entreprises publiques et privées",
+      "Administrations sectorielles"
+    ],
     publics: [
       "Instituts de formation professionnelle d'excellence",
       "Grandes entreprises publiques et privées",
@@ -248,7 +286,7 @@ export const EXPERTISES: ExpertiseItem[] = [
     slug: 'formation-cadres-publics',
     category: 'cooperer',
     categoryLabel: 'Coopérer avec le monde',
-    title: "Renforcement des capacités & Formation des cadres publics",
+    title: "Renforcement des capacités & Formation des cadres de l'État",
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
     shortDescription:
       "Programmes de perfectionnement pour les directeurs de ministères, recteurs et gestionnaires de l'enseignement supérieur.",
@@ -263,6 +301,11 @@ export const EXPERTISES: ExpertiseItem[] = [
       "Tableaux de bord de pilotage des effectifs et des budgets",
       "Guide de gestion des crises et du dialogue social académique",
       "Réseau d'entraide des gestionnaires universitaires"
+    ],
+    targetInstitutions: [
+      "Secrétaires généraux de ministères",
+      "Doyens, directeurs d'UFR et secrétaires généraux d'université",
+      "Responsables des systèmes d'information académiques"
     ],
     publics: [
       "Secrétaires généraux de ministères",
@@ -512,7 +555,7 @@ export const RESOURCES = [
     title: "Protocole type : La co-diplomation équilibrée",
     theme: "Coopération internationale",
     date: "Juin 2026",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1000&q=80",
     summary:
       "Modèle contractuel de partage des crédits et des frais de scolarité entre universités africaines et partenaires mondiaux.",
     readTime: "7 min de lecture",

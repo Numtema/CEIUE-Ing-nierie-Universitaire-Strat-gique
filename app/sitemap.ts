@@ -9,7 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/le-ceiue',
     '/expertises',
     '/methode',
-    '/publics',
     '/ressources',
     '/contact',
     '/mentions-legales',

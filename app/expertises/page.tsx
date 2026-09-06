@@ -186,7 +186,7 @@ export default function ExpertisesIndexPage() {
 
                         <div className="pt-6 mt-6 border-t border-[#102A43] flex items-center justify-between">
                           <span className="text-xs font-mono text-slate-400 truncate pr-2 max-w-[200px]">
-                            {exp.publics[0]}
+                            {exp.targetInstitutions[0]}
                           </span>
                           <Link
                             href={`/expertises/${exp.slug}`}

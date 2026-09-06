@@ -10,7 +10,8 @@ import DiplomaTrustPipeline from '@/components/DiplomaTrustPipeline';
 import TalentNationFlow from '@/components/TalentNationFlow';
 import MethodInteractive from '@/components/MethodInteractive';
 import NationalNeedForm from '@/components/NationalNeedForm';
-import { PILLARS, EXPERTISES, AUDIENCES } from '@/lib/data/expertises';
+import QuatreAxesCinematic from '@/components/QuatreAxesCinematic';
+import { EXPERTISES } from '@/lib/data/expertises';
 import {
   ArrowRight,
   ShieldCheck,
@@ -19,8 +20,13 @@ import {
   Compass,
   CheckCircle2,
   FileSpreadsheet,
-  Building,
-  Sparkles
+  Building2,
+  Sparkles,
+  Lock,
+  Globe2,
+  FileCheck,
+  Scale,
+  Award,
 } from 'lucide-react';
 
 export default function HomePage() {
@@ -70,19 +76,17 @@ export default function HomePage() {
                 <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                   <Link
                     href="/contact"
-                    id="hero-cta-primary"
-                    className="inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full bg-[#C7A45D] hover:bg-[#E1C783] text-[#07111F] font-bold text-base transition-all duration-200 shadow-xl active:scale-[0.98]"
+                    className="inline-flex items-center justify-center gap-2 px-7 h-13 rounded-full bg-[#C7A45D] hover:bg-[#E1C783] text-[#07111F] font-bold text-sm tracking-wide transition-all duration-200 shadow-xl hover:shadow-[#C7A45D]/20 active:scale-98"
                   >
                     <span>Présenter un besoin national</span>
-                    <ArrowRight className="w-5 h-5" />
+                    <ArrowRight className="w-4 h-4" />
                   </Link>
 
                   <Link
-                    href="#quatre-axes"
-                    id="hero-cta-secondary"
-                    className="inline-flex items-center justify-center gap-2 px-7 h-14 rounded-full bg-[#0B1B2E] hover:bg-[#102A43] border border-[#102A43] hover:border-[#C7A45D]/50 text-slate-200 font-medium text-sm transition-all"
+                    href="/expertises"
+                    className="inline-flex items-center justify-center gap-2 px-6 h-13 rounded-full bg-white/5 hover:bg-white/10 text-white border border-white/15 text-sm font-medium transition-all duration-200"
                   >
-                    <span>Découvrir nos expertises</span>
+                    <span>Explorer nos expertises</span>
                   </Link>
                 </div>
 
@@ -111,81 +115,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SÉQUENCE 03 — LES QUATRE AXES */}
-        <section id="quatre-axes" className="py-24 sm:py-32 bg-[#0B1B2E] border-b border-[#102A43]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-              <div>
-                <span className="text-xs font-mono uppercase tracking-widest text-[#C7A45D] block mb-2">
-                  PILIER D'INGÉNIERIE STRATÉGIQUE
-                </span>
-                <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white">
-                  Les quatre axes d'action
-                </h2>
-              </div>
-              <p className="text-sm sm:text-base text-slate-300 max-w-md">
-                Une réponse systémique pour articuler besoins nationaux, confiance académique et capital humain.
-              </p>
-            </div>
-
-            {/* 4 Pillars Interactive Grid with Modern Editorial Photography */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {PILLARS.map((pillar) => (
-                <Link
-                  key={pillar.number}
-                  href={pillar.link}
-                  className="group bg-[#07111F] border border-[#102A43] hover:border-[#C7A45D] rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-[#C7A45D]"
-                >
-                  {/* Image Header with Framer-style badge overlay */}
-                  <div className="relative h-44 w-full overflow-hidden shrink-0">
-                    <Image
-                      src={pillar.image}
-                      alt={pillar.title}
-                      fill
-                      className="object-cover group-hover:scale-108 transition-transform duration-700 brightness-80"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#07111F] via-[#07111F]/40 to-transparent" />
-
-                    {/* Top pill badges */}
-                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
-                      <span className="font-mono text-[10px] font-bold text-[#07111F] px-2.5 py-0.5 rounded-full bg-[#C7A45D] shadow">
-                        AXE {pillar.number}
-                      </span>
-                      <span className="font-mono text-[10px] text-white px-2 py-0.5 rounded-full bg-[#07111F]/80 backdrop-blur-md border border-white/20">
-                        {pillar.badge}
-                      </span>
-                    </div>
-
-                    <div className="absolute bottom-2 right-3">
-                      <span className="font-mono text-[11px] text-[#5CC8E8] bg-[#07111F]/85 backdrop-blur-sm px-2 py-0.5 rounded border border-[#102A43]">
-                        {pillar.metric}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Body text */}
-                  <div className="p-6 flex flex-col justify-between flex-1">
-                    <div>
-                      <h3 className="font-serif text-xl text-white group-hover:text-[#E1C783] transition-colors mb-2 leading-snug">
-                        {pillar.title}
-                      </h3>
-
-                      <p className="text-xs text-slate-300 leading-relaxed mb-6 font-light">
-                        {pillar.summary}
-                      </p>
-                    </div>
-
-                    <div className="pt-4 border-t border-[#102A43] flex items-center justify-between text-xs font-mono text-[#C7A45D]">
-                      <span className="truncate pr-2 text-slate-400">{pillar.highlight}</span>
-                      <ArrowRight className="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-1" />
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* SÉQUENCE 03 — LES QUATRE AXES (Cinématique & Parallaxe) */}
+        <QuatreAxesCinematic />
 
         {/* SÉQUENCE 04 — CONVICTION (Fond ivoire #FBF8F1) */}
         <section id="conviction" className="py-24 sm:py-36 bg-[#FBF8F1] text-[#142131] relative overflow-hidden border-b border-[#D9D4C9]">
@@ -197,7 +128,7 @@ export default function HomePage() {
               </span>
 
               {/* Monumental Editorial Quote */}
-              <blockquote className="font-serif text-3xl sm:text-5xl lg:text-6xl text-[#07111F] leading-[1.2] tracking-tight">
+              <blockquote className="font-serif text-3xl sm:text-5xl lg:text-6xl text-[#07111F] leading-[1.2] tracking-tight font-normal">
                 « Former selon les besoins du pays, coopérer avec le monde, retenir les talents. »
               </blockquote>
 
@@ -223,74 +154,91 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* NOUVELLE SÉQUENCE: GALERIE PHOTOGRAPHIQUE & ÉTUDES DE CAS D'ÉTATS (Framer & Webflow Style) */}
+        {/* NOUVELLE SÉQUENCE: GALERIE PHOTOGRAPHIQUE & ÉTUDES DE CAS D'ÉTATS */}
         <VisualImpactGallery />
 
-        {/* SÉQUENCE 05 — SYSTÈME D'EXPERTISES */}
+        {/* SÉQUENCE 05 — SYSTÈME D'EXPERTISES AVEC IMAGES ÉDITORIALES SOUVERAINES */}
         <section id="expertises-systeme" className="py-24 sm:py-32 bg-[#07111F] border-b border-[#102A43]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-16">
-              <span className="text-xs font-mono uppercase tracking-widest text-[#C7A45D] block mb-2">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#C7A45D] block mb-2 font-bold">
                 CATALOGUE D'INGÉNIERIE SOUVERAINE
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white mb-4 font-normal">
                 Des réponses adaptées à chaque défi d'État
               </h2>
-              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
                 Nos expertises ne sont pas une liste théorique mais des architectures concrètes créées pour résoudre les blocages structurels de l'enseignement supérieur.
               </p>
             </div>
 
-            {/* Editorial grouped layout */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Editorial photographic cards grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {EXPERTISES.map((exp) => (
                 <div
                   key={exp.slug}
-                  className="bg-[#0B1B2E] border border-[#102A43] hover:border-[#C7A45D]/50 rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all group"
+                  className="bg-[#0B1B2E] border border-[#102A43] hover:border-[#C7A45D]/60 rounded-3xl overflow-hidden flex flex-col justify-between transition-all duration-300 group shadow-xl hover:-translate-y-1"
                 >
                   <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-[11px] font-mono text-[#5CC8E8] uppercase tracking-wider">
-                        {exp.categoryLabel}
-                      </span>
+                    {/* Authentic Photographic Header */}
+                    <div className="relative h-48 w-full overflow-hidden bg-slate-900">
+                      <Image
+                        src={exp.image}
+                        alt={exp.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.82]"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B2E] via-transparent to-black/40" />
+
+                      <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between">
+                        <span className="px-3 py-1 rounded-full bg-[#07111F]/80 backdrop-blur-md border border-[#C7A45D]/40 text-[#C7A45D] text-[10px] font-mono uppercase tracking-wider font-semibold">
+                          {exp.categoryLabel}
+                        </span>
+                      </div>
                     </div>
 
-                    <h3 className="font-serif text-xl text-white group-hover:text-[#E1C783] transition-colors mb-3">
-                      {exp.title}
-                    </h3>
+                    {/* Card Content Body */}
+                    <div className="p-6">
+                      <h3 className="font-serif text-xl text-white group-hover:text-[#E1C783] transition-colors mb-3 leading-snug font-normal">
+                        {exp.title}
+                      </h3>
 
-                    <p className="text-sm text-slate-300 leading-relaxed mb-4">
-                      {exp.shortDescription}
-                    </p>
-
-                    <div className="bg-[#07111F] p-3 rounded-xl border border-[#102A43] mb-4">
-                      <span className="text-[10px] font-mono text-[#C7A45D] uppercase block mb-1">
-                        Enjeu résolu :
-                      </span>
-                      <p className="text-xs text-slate-400 line-clamp-2">
-                        {exp.problem}
+                      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4 font-light">
+                        {exp.shortDescription}
                       </p>
+
+                      <div className="bg-[#07111F] p-3.5 rounded-2xl border border-[#102A43]">
+                        <span className="text-[10px] font-mono text-[#C7A45D] uppercase block mb-1 font-semibold">
+                          Enjeu résolu :
+                        </span>
+                        <p className="text-xs text-slate-300 line-clamp-2 leading-relaxed font-light">
+                          {exp.problem}
+                        </p>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="pt-4 border-t border-[#102A43] flex items-center justify-between">
+                  <div className="p-6 pt-0 border-t border-[#102A43]/80 mt-4 flex items-center justify-between">
                     <Link
                       href={`/expertises/${exp.slug}`}
-                      className="text-xs font-mono text-slate-300 hover:text-white flex items-center gap-1.5"
+                      className="text-xs font-mono text-[#C7A45D] group-hover:text-white flex items-center gap-1.5 font-semibold transition-colors"
                     >
-                      Détail du dispositif <ArrowRight className="w-3.5 h-3.5 text-[#C7A45D]" />
+                      <span>Détail du dispositif</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-12 text-center">
+            <div className="mt-14 text-center">
               <Link
                 href="/expertises"
-                className="inline-flex items-center gap-2 text-sm font-mono text-[#E1C783] hover:text-white underline underline-offset-4"
+                className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-[#0F2238] border border-[#C7A45D]/40 text-sm font-mono text-[#E1C783] hover:text-white hover:border-[#C7A45D] transition-all shadow-md group cursor-pointer"
               >
-                Consulter l'ensemble de la cartographie des expertises →
+                <span>Consulter l'ensemble de la cartographie des expertises</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
           </div>
@@ -314,13 +262,13 @@ export default function HomePage() {
         <section id="methode" className="py-24 sm:py-32 bg-[#07111F] border-b border-[#102A43]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-16">
-              <span className="text-xs font-mono uppercase tracking-widest text-[#C7A45D] block mb-2">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#C7A45D] block mb-2 font-bold">
                 PROCESSUS OPÉRATIONNEL CEIUE
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white mb-4 font-normal">
                 Une méthode en six étapes, du diagnostic à l'impact
               </h2>
-              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
                 Une démarche rigoureuse sans promesse éphémère. Chaque étape est adossée à un livrable vérifiable et à un transfert de compétences vers les administrations nationales.
               </p>
             </div>
@@ -329,95 +277,149 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SÉQUENCE 09 — LIVRABLES ET PUBLICS */}
-        <section id="livrables-publics" className="py-24 sm:py-32 bg-[#0B1B2E] border-b border-[#102A43]">
+        {/* SÉQUENCE 09 — LIVRABLES RÉGALIENS & TRANSFERT DE SOUVERAINETÉ */}
+        <section id="livrables-souverains" className="py-24 sm:py-32 bg-[#0B1B2E] border-b border-[#102A43]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-              {/* Livrables Nationaux */}
-              <div className="bg-[#07111F] border border-[#102A43] rounded-2xl p-8 sm:p-10 flex flex-col justify-between">
+            <div className="max-w-3xl mb-14">
+              <span className="inline-flex items-center gap-2 text-xs font-mono text-[#C7A45D] uppercase tracking-wider mb-2 font-bold">
+                <FileSpreadsheet className="w-4 h-4 text-[#5CC8E8]" />
+                CAPACITÉS DURABLES & OUTILS D'ÉTAT
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white mb-4 font-normal">
+                Ce que le CEIUE transmet aux institutions mandantes
+              </h2>
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-light">
+                Nous ne laissons pas derrière nous de simples rapports de cabinet. Nous remettons aux gouvernements et universités 5 instruments juridiques, techniques et numériques immédiatement opérationnels :
+              </p>
+            </div>
+
+            {/* 5 Sovereign Deliverable Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Deliverable 1 */}
+              <div className="bg-[#07111F] border border-[#102A43] hover:border-[#C7A45D]/50 rounded-3xl p-7 flex flex-col justify-between transition-colors shadow-lg">
                 <div>
-                  <div className="flex items-center gap-2 text-xs font-mono text-[#C7A45D] uppercase tracking-wider mb-3">
-                    <FileSpreadsheet className="w-4 h-4 text-[#5CC8E8]" />
-                    Livrables et Capacités Durables
+                  <div className="w-10 h-10 rounded-xl bg-[#0B1B2E] border border-[#C7A45D]/30 flex items-center justify-center text-[#C7A45D] mb-5">
+                    <Compass className="w-5 h-5 text-[#C7A45D]" />
                   </div>
-                  <h3 className="font-serif text-2xl sm:text-3xl text-white mb-4">
-                    Ce que CEIUE transmet aux institutions
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#5CC8E8] font-semibold block mb-1">
+                    Instrument Stratégique
+                  </span>
+                  <h3 className="font-serif text-lg text-white font-medium mb-3">
+                    Stratégie nationale d'alignement des compétences (Horizon 10 ans)
                   </h3>
-                  <p className="text-sm text-slate-300 leading-relaxed mb-6 font-light">
-                    Nous ne laissons pas derrière nous de simples rapports de cabinet. Nous remettons des instruments juridiques, techniques et numériques opérationnels :
+                  <p className="text-xs text-slate-300 font-light leading-relaxed mb-4">
+                    Cartographie prospective reliant les plans nationaux de développement économique et les maquettes d'enseignement supérieur, actualisable par les ministères.
                   </p>
-
-                  <ul className="space-y-3 text-sm text-slate-200">
-                    <li className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#C7A45D] mt-2 shrink-0" />
-                      <span><strong>Stratégies nationales</strong> d'alignement des compétences à horizon 10 ans.</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#C7A45D] mt-2 shrink-0" />
-                      <span><strong>Audits indépendants</strong> des cursus universitaires et filières manquantes.</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#C7A45D] mt-2 shrink-0" />
-                      <span><strong>Procédures & plateformes</strong> d'authentification rapide et infalsifiable des diplômes.</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#C7A45D] mt-2 shrink-0" />
-                      <span><strong>Bases de données souveraines</strong> pour le suivi des boursiers et le retour de la diaspora.</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#C7A45D] mt-2 shrink-0" />
-                      <span><strong>Accords internationaux</strong> de co-diplomation équilibrée et conventions de double titre.</span>
-                    </li>
-                  </ul>
                 </div>
-
-                <div className="pt-8 mt-6 border-t border-[#102A43]">
-                  <Link
-                    href="/methode"
-                    className="text-xs font-mono text-[#5CC8E8] hover:text-[#E1C783] flex items-center gap-1.5"
-                  >
-                    Voir le cycle complet des livrables <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
+                <div className="pt-4 border-t border-[#102A43] text-[11px] font-mono text-[#C7A45D]">
+                  Livrable : Matrice macro-académique
                 </div>
               </div>
 
-              {/* Publics et Partenaires */}
-              <div className="bg-[#07111F] border border-[#102A43] rounded-2xl p-8 sm:p-10 flex flex-col justify-between">
+              {/* Deliverable 2 */}
+              <div className="bg-[#07111F] border border-[#102A43] hover:border-[#C7A45D]/50 rounded-3xl p-7 flex flex-col justify-between transition-colors shadow-lg">
                 <div>
-                  <div className="flex items-center gap-2 text-xs font-mono text-[#5CC8E8] uppercase tracking-wider mb-3">
-                    <Building className="w-4 h-4 text-[#C7A45D]" />
-                    Acteurs & Mandants Institutionnels
+                  <div className="w-10 h-10 rounded-xl bg-[#0B1B2E] border border-[#5CC8E8]/30 flex items-center justify-center text-[#5CC8E8] mb-5">
+                    <FileCheck className="w-5 h-5 text-[#5CC8E8]" />
                   </div>
-                  <h3 className="font-serif text-2xl sm:text-3xl text-white mb-4">
-                    À qui s'adresse le CEIUE
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#5CC8E8] font-semibold block mb-1">
+                    Instrument Diagnostique
+                  </span>
+                  <h3 className="font-serif text-lg text-white font-medium mb-3">
+                    Audit indépendant des cursus & filières manquantes
                   </h3>
-                  <p className="text-sm text-slate-300 leading-relaxed mb-6 font-light">
-                    Notre dialogue s'établit exclusivement avec les décideurs et autorités en charge du capital humain national :
+                  <p className="text-xs text-slate-300 font-light leading-relaxed mb-4">
+                    Évaluation indépendante des maquettes pédagogiques existantes, identification des doublons et recommandations d'ouvertures de filières prioritaires.
                   </p>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {AUDIENCES.map((aud) => (
-                      <div
-                        key={aud.id}
-                        className="p-3.5 rounded-xl bg-[#0B1B2E] border border-[#102A43]"
-                      >
-                        <span className="font-serif text-sm text-white block mb-0.5">
-                          {aud.title}
-                        </span>
-                        <span className="text-[11px] font-mono text-slate-400">
-                          {aud.role}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
                 </div>
+                <div className="pt-4 border-t border-[#102A43] text-[11px] font-mono text-[#5CC8E8]">
+                  Livrable : Cahier d'arbitrage ministériel
+                </div>
+              </div>
 
-                <div className="pt-8 mt-6 border-t border-[#102A43]">
+              {/* Deliverable 3 */}
+              <div className="bg-[#07111F] border border-[#102A43] hover:border-[#C7A45D]/50 rounded-3xl p-7 flex flex-col justify-between transition-colors shadow-lg">
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-[#0B1B2E] border border-[#B8D94E]/30 flex items-center justify-center text-[#B8D94E] mb-5">
+                    <Lock className="w-5 h-5 text-[#B8D94E]" />
+                  </div>
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#B8D94E] font-semibold block mb-1">
+                    Instrument Numérique
+                  </span>
+                  <h3 className="font-serif text-lg text-white font-medium mb-3">
+                    Plateforme souveraine d'authentification des diplômes
+                  </h3>
+                  <p className="text-xs text-slate-300 font-light leading-relaxed mb-4">
+                    Registre unifié infalsifiable avec horodatage cryptographique, permettant la vérification d'un titre en moins de 72h par les chancelleries mondiales.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-[#102A43] text-[11px] font-mono text-[#B8D94E]">
+                  Livrable : Guichet régalien infalsifiable
+                </div>
+              </div>
+
+              {/* Deliverable 4 */}
+              <div className="bg-[#07111F] border border-[#102A43] hover:border-[#C7A45D]/50 rounded-3xl p-7 flex flex-col justify-between transition-colors shadow-lg">
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-[#0B1B2E] border border-[#C7A45D]/30 flex items-center justify-center text-[#C7A45D] mb-5">
+                    <Users className="w-5 h-5 text-[#C7A45D]" />
+                  </div>
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#C7A45D] font-semibold block mb-1">
+                    Instrument Opérationnel
+                  </span>
+                  <h3 className="font-serif text-lg text-white font-medium mb-3">
+                    Bases de données de suivi des boursiers & retour des talents
+                  </h3>
+                  <p className="text-xs text-slate-300 font-light leading-relaxed mb-4">
+                    Contrats tripartites (État-Étudiant-Université), cartographie des diplômés de la diaspora et passerelles d'insertion dans les fonctions critiques nationales.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-[#102A43] text-[11px] font-mono text-[#C7A45D]">
+                  Livrable : Baromètre & guichet d'insertion
+                </div>
+              </div>
+
+              {/* Deliverable 5 */}
+              <div className="bg-[#07111F] border border-[#102A43] hover:border-[#C7A45D]/50 rounded-3xl p-7 flex flex-col justify-between transition-colors shadow-lg">
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-[#0B1B2E] border border-[#5CC8E8]/30 flex items-center justify-center text-[#5CC8E8] mb-5">
+                    <Globe2 className="w-5 h-5 text-[#5CC8E8]" />
+                  </div>
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#5CC8E8] font-semibold block mb-1">
+                    Instrument Juridique
+                  </span>
+                  <h3 className="font-serif text-lg text-white font-medium mb-3">
+                    Conventions bilatérales de co-diplomation équilibrée
+                  </h3>
+                  <p className="text-xs text-slate-300 font-light leading-relaxed mb-4">
+                    Accords interinstitutionnels garantissant la parité scientifique, la délivrance de doubles diplômes reconnus et la mobilité croisée d'enseignants-chercheurs.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-[#102A43] text-[11px] font-mono text-[#5CC8E8]">
+                  Livrable : Traités académiques réciproques
+                </div>
+              </div>
+
+              {/* Sovereign Guarantee Callout */}
+              <div className="bg-[#0F2238] border border-[#C7A45D]/40 rounded-3xl p-7 flex flex-col justify-between shadow-xl">
+                <div>
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#C7A45D] font-bold block mb-2">
+                    ENGAGEMENT DE SOUVERAINETÉ
+                  </span>
+                  <h3 className="font-serif text-xl text-white font-normal mb-3">
+                    100% de propriété régalienne
+                  </h3>
+                  <p className="text-xs text-slate-200 font-light leading-relaxed mb-4">
+                    Toutes les bases de données, registres et algorithmes développés demeurent la propriété exclusive de l'État mandant. Formation complète des équipes ministérielles pour une autonomie totale.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-white/10">
                   <Link
-                    href="/publics"
-                    className="text-xs font-mono text-[#E1C783] hover:text-white flex items-center gap-1.5"
+                    href="/methode"
+                    className="text-xs font-mono text-[#E1C783] hover:text-white flex items-center gap-1.5 font-semibold"
                   >
-                    Explorer les parcours dédiés par public <ArrowRight className="w-3.5 h-3.5" />
+                    <span>Voir le cycle de transfert complet</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#C7A45D]" />
                   </Link>
                 </div>
               </div>
@@ -433,11 +435,11 @@ export default function HomePage() {
                 <ShieldCheck className="w-3.5 h-3.5 text-[#5CC8E8]" />
                 ACTION STRATÉGIQUE
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white mb-4 font-normal">
                 Présenter un besoin national
               </h2>
-              <p className="text-sm sm:text-base text-slate-300">
-                Transmettez votre demande d'audit, de registre de diplômes, de bourses ciblées ou de coopération universitaire. Le directoire du CEIUE s'engage à vous répondre sous 48 heures ouvrées.
+              <p className="text-sm sm:text-base text-slate-300 font-light leading-relaxed">
+                Transmettez votre demande d'audit, de registre de diplômes, de bourses ciblées ou de coopération universitaire. Le directoire du CEIUE s'engage à vous répondre sous 48 heures ouvrées dans le cadre d'un protocole confidentiel.
               </p>
             </div>
 
